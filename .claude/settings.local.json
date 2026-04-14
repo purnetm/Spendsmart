@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(npx create-next-app@latest spendsmart-temp --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --yes)",
+      "Bash(mv spendsmart-temp/* .)",
+      "Bash(mv spendsmart-temp/.* .)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const tw = require\\('tailwindcss/package.json'\\); console.log\\(tw.version\\)\")",
+      "Bash(npx shadcn@latest init --defaults)"
+    ]
+  }
+}
