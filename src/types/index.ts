@@ -1,3 +1,5 @@
+import type { ComponentType } from "react";
+
 export interface User {
   name: string;
   creditScore: number;
@@ -13,7 +15,7 @@ export interface User {
 export interface Category {
   id: string;
   label: string;
-  icon: React.ComponentType<{ size?: number; color?: string }>;
+  icon: ComponentType<{ size?: number; color?: string }>;
   color: string;
   amount: number;
   budget: number;
@@ -46,7 +48,7 @@ export interface Plan {
 export interface Subscription {
   id: number;
   name: string;
-  icon: React.ComponentType<{ size?: number; color?: string }>;
+  icon: ComponentType<{ size?: number; color?: string }>;
   color: string;
   cost: number;
   used: number | null;

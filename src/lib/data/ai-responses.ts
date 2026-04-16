@@ -1,6 +1,6 @@
 import type { AIResponse } from "@/types";
 import { totalSpent, totalBudget } from "./categories";
-import { SUBS, wasteCost } from "./subscriptions";
+import { SUBS, subTotal, wasteCost } from "./subscriptions";
 import { USER } from "./user";
 
 export const AI_INIT = `Hi ${USER.name}! 👋 Here's your April snapshot:\n\nYou've spent **₹${totalSpent.toLocaleString()}** this month — **₹${(totalSpent - totalBudget).toLocaleString()}** over budget.\n\nTop overspends: **Restaurants** (₹3,500 over) and **Subscriptions** (₹700 over). Plus you have **₹${wasteCost}/mo** in barely-used subscriptions.\n\nWhat should we tackle?`;
@@ -11,7 +11,7 @@ export const AI_MAP: Record<string, AIResponse> = {
     actions: ["Set alert", "Show savings plan", "Skip"],
   },
   "Review subscriptions": {
-    text: `You pay **₹${SUBS.reduce((s, x) => s + x.cost, 0).toLocaleString()}/mo** across ${SUBS.length} subscriptions.\n\n**Low-use alerts:**\n📺 Netflix — ₹649 but only 2 hrs used (₹325/hr!)\n💪 Cult.fit — ₹1,499 for 8 visits (₹187/visit)\n🎮 Xbox Pass — ₹449 with ZERO usage\n📰 The Ken — ₹499 for 3 articles (₹166/article)\n\nCancelling low-use subs saves **₹${wasteCost}/mo** (₹${(wasteCost * 12).toLocaleString()}/yr)`,
+    text: `You pay **₹${subTotal.toLocaleString()}/mo** across ${SUBS.length} subscriptions.\n\n**Low-use alerts:**\n📺 Netflix — ₹649 but only 2 hrs used (₹325/hr!)\n💪 Cult.fit — ₹1,499 for 8 visits (₹187/visit)\n🎮 Xbox Pass — ₹449 with ZERO usage\n📰 The Ken — ₹499 for 3 articles (₹166/article)\n\nCancelling low-use subs saves **₹${wasteCost}/mo** (₹${(wasteCost * 12).toLocaleString()}/yr)`,
     actions: ["Cancel suggestions", "Keep all", "Go to Subscriptions"],
   },
   "Check BNPL health": {
