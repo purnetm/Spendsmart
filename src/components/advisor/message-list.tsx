@@ -13,9 +13,12 @@ interface MessageListProps {
 
 export function MessageList({ messages, typing }: MessageListProps) {
   const bottomRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    const behavior = isFirstRender.current ? "instant" : "smooth";
+    isFirstRender.current = false;
+    bottomRef.current?.scrollIntoView({ behavior });
   }, [messages, typing]);
 
   return (

@@ -27,7 +27,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const isAdvisor = pathname.includes("/advisor");
 
   return (
-    <div className="relative flex flex-col min-h-screen bg-n-950 overflow-hidden">
+    <div className="relative flex flex-col min-h-[100dvh] bg-n-950 overflow-hidden">
       <DotPattern className="absolute inset-0 opacity-[0.25] text-white [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_30%,black_100%)]" />
       {/* Header */}
       <header className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-n-950 border-b border-white/[0.07] px-5 pt-12 pb-5">

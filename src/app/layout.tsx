@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} dark`}>
       <body className="bg-[#09090b]">
-        <div className="max-w-[430px] mx-auto min-h-screen bg-[#09090b]">
+        <div className="max-w-[430px] mx-auto min-h-[100dvh] bg-[#09090b]">
           {children}
         </div>
       </body>

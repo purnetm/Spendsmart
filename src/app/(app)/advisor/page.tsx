@@ -13,7 +13,7 @@ export default function AdvisorPage() {
   }));
 
   return (
-    <div className="flex flex-col h-[calc(100vh-130px)]">
+    <div className="flex flex-col h-full">
       <MessageList messages={messagesWithHandlers} typing={typing} />
       <ChatInput onSend={handleSend} disabled={streaming || typing} />
     </div>

@@ -10,7 +10,7 @@ export default function WelcomePage() {
   const router = useRouter();
 
   return (
-    <div className="relative min-h-screen bg-[#09090b] flex flex-col overflow-hidden">
+    <div className="relative min-h-[100dvh] bg-[#09090b] flex flex-col overflow-hidden">
       {/* Subtle dot pattern background */}
       <DotPattern className="absolute inset-0 opacity-[0.30] text-white [mask-image:radial-gradient(ellipse_70%_70%_at_50%_30%,transparent_20%,black_100%)]" />
 
