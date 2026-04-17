@@ -65,7 +65,7 @@ export function CatBar({ cat }: CatBarProps) {
 
           {/* MoM arrow */}
           <span
-            className={`flex items-center text-[9px] flex-shrink-0 ${
+            className={`flex items-center text-[11px] flex-shrink-0 ${
               isUp ? "text-err-500" : "text-pri-500"
             }`}
           >

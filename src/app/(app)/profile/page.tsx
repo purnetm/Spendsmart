@@ -71,7 +71,7 @@ export default function ProfilePage() {
         {/* Back button */}
         <button
           onClick={() => router.back()}
-          className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mb-4"
+          className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center mb-4 hover:bg-white/20 transition-colors"
         >
           <ArrowLeft size={16} className="text-white" />
         </button>
@@ -82,7 +82,7 @@ export default function ProfilePage() {
             <div className="w-[68px] h-[68px] rounded-full bg-gradient-to-br from-pri-400 to-pri-600 flex items-center justify-center font-display font-bold text-2xl text-white shadow-lg">
               {initials}
             </div>
-            <button className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center">
+            <button className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-n-50 transition-colors">
               <Camera size={12} className="text-n-600" />
             </button>
           </div>
@@ -103,17 +103,17 @@ export default function ProfilePage() {
       <div className="grid grid-cols-3 gap-2.5 -mt-5 mx-4 relative z-10 mb-5">
         <div className="bg-white rounded-xl p-3 shadow-sm border border-n-100 text-center">
           <p className="font-display font-bold text-[16px] text-n-900">{USER.onTimeStreak}</p>
-          <p className="font-body text-[9px] text-n-400 leading-tight mt-0.5">On-time streak</p>
+          <p className="font-body text-[10px] text-n-400 leading-tight mt-0.5">On-time streak</p>
         </div>
         <div className="bg-white rounded-xl p-3 shadow-sm border border-n-100 text-center">
           <p className="font-display font-bold text-[16px] text-n-900">
             ₹{(USER.savedViaGoodBehavior / 1000).toFixed(1)}K
           </p>
-          <p className="font-body text-[9px] text-n-400 leading-tight mt-0.5">Saved</p>
+          <p className="font-body text-[10px] text-n-400 leading-tight mt-0.5">Saved</p>
         </div>
         <div className="bg-white rounded-xl p-3 shadow-sm border border-n-100 text-center">
           <p className="font-display font-bold text-[14px] text-n-900">Oct &apos;25</p>
-          <p className="font-body text-[9px] text-n-400 leading-tight mt-0.5">Member since</p>
+          <p className="font-body text-[10px] text-n-400 leading-tight mt-0.5">Member since</p>
         </div>
       </div>
 

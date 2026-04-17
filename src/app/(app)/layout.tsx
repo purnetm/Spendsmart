@@ -5,6 +5,13 @@ import { Home as HomeIcon, BarChart3, CreditCard, Sparkles } from "lucide-react"
 import { Star } from "lucide-react";
 import { USER } from "@/lib/data/user";
 
+function getGreeting() {
+  const h = new Date().getHours();
+  if (h < 12) return "Good morning";
+  if (h < 17) return "Good afternoon";
+  return "Good evening";
+}
+
 const tabs = [
   { label: "Home", href: "/home", icon: HomeIcon },
   { label: "Spend", href: "/spend", icon: BarChart3 },
@@ -40,9 +47,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               {USER.name.charAt(0)}
             </button>
             <div>
-              <p className="font-body text-xs text-n-0/50">Hi, {USER.name}</p>
+              <p className="font-body text-xs text-n-0/50">{getGreeting()}</p>
               <p className="font-display text-base font-bold text-n-0 leading-tight">
-                SpendSmart
+                {USER.name}
               </p>
             </div>
           </div>
@@ -78,7 +85,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <button
                 key={href}
                 onClick={() => router.push(href)}
-                className="flex flex-col items-center gap-1 px-4 py-2 rounded-xl active:scale-95 transition-transform"
+                className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl active:scale-95 transition-all duration-200 ${
+                  isActive ? "bg-pri-50" : "hover:bg-n-50"
+                }`}
               >
                 <Icon
                   size={22}

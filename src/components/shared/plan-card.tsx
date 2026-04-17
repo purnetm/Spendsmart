@@ -23,7 +23,7 @@ export function PlanCard({ plan, expanded, onToggle }: PlanCardProps) {
   return (
     <div
       className={cn(
-        "rounded-lg border shadow overflow-hidden mb-2 transition-all duration-300",
+        "rounded-lg border shadow-sm overflow-hidden mb-2 transition-all duration-300",
         expanded ? "border-pri-200" : "border-n-100"
       )}
     >
