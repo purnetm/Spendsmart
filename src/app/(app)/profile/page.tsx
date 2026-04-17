@@ -66,8 +66,8 @@ export default function ProfilePage() {
 
   return (
     <div className="pb-6">
-      {/* Dark gradient header */}
-      <div className="bg-gradient-to-br from-n-900 via-pri-900 to-pri-800 p-5 pb-10 relative">
+      {/* Dark header */}
+      <div className="bg-n-950 border-b border-white/[0.07] p-5 pb-10 relative">
         {/* Back button */}
         <button
           onClick={() => router.back()}
@@ -101,19 +101,19 @@ export default function ProfilePage() {
 
       {/* Stats cards — overlapping the header */}
       <div className="grid grid-cols-3 gap-2.5 -mt-5 mx-4 relative z-10 mb-5">
-        <div className="bg-white rounded-xl p-3 shadow-sm border border-n-100 text-center">
-          <p className="font-display font-bold text-[16px] text-n-900">{USER.onTimeStreak}</p>
-          <p className="font-body text-[10px] text-n-400 leading-tight mt-0.5">On-time streak</p>
+        <div className="bg-[#161616] rounded-xl p-3 border border-white/[0.07] text-center">
+          <p className="font-display font-bold text-[16px] text-white">{USER.onTimeStreak}</p>
+          <p className="font-body text-[10px] text-white/35 leading-tight mt-0.5">On-time streak</p>
         </div>
-        <div className="bg-white rounded-xl p-3 shadow-sm border border-n-100 text-center">
-          <p className="font-display font-bold text-[16px] text-n-900">
+        <div className="bg-[#161616] rounded-xl p-3 border border-white/[0.07] text-center">
+          <p className="font-display font-bold text-[16px] text-white">
             ₹{(USER.savedViaGoodBehavior / 1000).toFixed(1)}K
           </p>
-          <p className="font-body text-[10px] text-n-400 leading-tight mt-0.5">Saved</p>
+          <p className="font-body text-[10px] text-white/35 leading-tight mt-0.5">Saved</p>
         </div>
-        <div className="bg-white rounded-xl p-3 shadow-sm border border-n-100 text-center">
-          <p className="font-display font-bold text-[14px] text-n-900">Oct &apos;25</p>
-          <p className="font-body text-[10px] text-n-400 leading-tight mt-0.5">Member since</p>
+        <div className="bg-[#161616] rounded-xl p-3 border border-white/[0.07] text-center">
+          <p className="font-display font-bold text-[14px] text-white">Oct &apos;25</p>
+          <p className="font-body text-[10px] text-white/35 leading-tight mt-0.5">Member since</p>
         </div>
       </div>
 
@@ -121,27 +121,27 @@ export default function ProfilePage() {
       <div className="mx-4 space-y-4">
         {menuSections.map((section) => (
           <div key={section.title}>
-            <p className="font-body text-[11px] font-semibold text-n-400 uppercase tracking-wide mb-2">
+            <p className="font-body text-[10px] font-semibold text-white/30 uppercase tracking-widest mb-2">
               {section.title}
             </p>
-            <div className="bg-white rounded-xl border border-n-100 shadow-sm overflow-hidden">
+            <div className="bg-[#161616] rounded-xl border border-white/[0.07] overflow-hidden">
               {section.items.map((item, i) => {
                 const Icon = item.icon;
                 return (
                   <button
                     key={item.label}
-                    className={`w-full flex items-center gap-3 px-4 py-3.5 text-left active:bg-n-50 transition-colors ${
-                      i < section.items.length - 1 ? "border-b border-n-100" : ""
+                    className={`w-full flex items-center gap-3 px-4 py-3.5 text-left active:bg-white/[0.04] transition-colors ${
+                      i < section.items.length - 1 ? "border-b border-white/[0.06]" : ""
                     }`}
                   >
-                    <div className="w-8 h-8 rounded-lg bg-n-100 flex items-center justify-center flex-shrink-0">
-                      <Icon size={15} className="text-n-600" />
+                    <div className="w-8 h-8 rounded-lg bg-white/[0.07] flex items-center justify-center flex-shrink-0">
+                      <Icon size={15} className="text-white/50" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-display font-medium text-[13px] text-n-800">{item.label}</p>
-                      <p className="font-body text-[11px] text-n-400">{item.sub}</p>
+                      <p className="font-display font-medium text-[13px] text-white/80">{item.label}</p>
+                      <p className="font-body text-[11px] text-white/35">{item.sub}</p>
                     </div>
-                    <ChevronRight size={15} className="text-n-300 flex-shrink-0" />
+                    <ChevronRight size={15} className="text-white/20 flex-shrink-0" />
                   </button>
                 );
               })}
@@ -152,14 +152,14 @@ export default function ProfilePage() {
         {/* Sign out */}
         <button
           onClick={() => router.push("/")}
-          className="w-full flex items-center justify-center gap-2 border border-red-200 bg-red-50 text-red-600 rounded-xl py-3.5 font-display font-semibold text-[14px] active:bg-red-100 transition-colors"
+          className="w-full flex items-center justify-center gap-2 border border-err-500/25 bg-err-500/10 text-err-400 rounded-xl py-3.5 font-display font-semibold text-[14px] active:bg-err-500/15 transition-colors"
         >
           <LogOut size={16} />
           Sign Out
         </button>
 
         {/* Version footer */}
-        <p className="text-center font-body text-[10px] text-n-300 pt-1">
+        <p className="text-center font-body text-[10px] text-white/20 pt-1">
           SpendSmart v1.0 · Made with care in India
         </p>
       </div>

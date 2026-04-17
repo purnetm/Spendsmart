@@ -15,29 +15,29 @@ export function PlansTab() {
       {/* Stats row */}
       <div className="grid grid-cols-2 gap-2 mb-3.5">
         {/* Credit score */}
-        <div className="rounded-lg border border-n-100 bg-white p-3">
-          <div className="flex items-center gap-1 mb-0.5">
-            <Star size={14} className="text-warn-500 fill-warn-500" />
-            <span className="font-body text-[11px] text-n-400">Credit score</span>
+        <div className="rounded-xl border border-white/[0.07] bg-[#161616] p-4">
+          <div className="flex items-center gap-1 mb-1.5">
+            <Star size={13} className="text-warn-400 fill-warn-400" />
+            <span className="font-body text-[11px] text-white/35 uppercase tracking-wider">Score</span>
           </div>
-          <p className="font-display font-bold text-lg text-n-900">
+          <p className="font-display font-bold text-[22px] text-white leading-none">
             {USER.creditScore}
           </p>
-          <p className="font-body text-[10px] text-pri-600">
+          <p className="font-body text-[10px] text-pri-400 mt-1">
             +{USER.scoreChange} this month
           </p>
         </div>
 
         {/* On-time streak */}
-        <div className="rounded-lg border border-pri-100 bg-pri-50 p-3">
-          <div className="flex items-center gap-1 mb-0.5">
-            <Award size={14} className="text-pri-600" />
-            <span className="font-body text-[11px] text-n-400">Streak</span>
+        <div className="rounded-xl border border-pri-500/20 bg-pri-500/10 p-4">
+          <div className="flex items-center gap-1 mb-1.5">
+            <Award size={13} className="text-pri-400" />
+            <span className="font-body text-[11px] text-white/35 uppercase tracking-wider">Streak</span>
           </div>
-          <p className="font-display font-bold text-lg text-n-900">
-            {USER.onTimeStreak} streak
+          <p className="font-display font-bold text-[22px] text-white leading-none">
+            {USER.onTimeStreak}
           </p>
-          <p className="font-body text-[10px] text-pri-600">
+          <p className="font-body text-[10px] text-pri-400 mt-1">
             Saved {formatINR(USER.savedViaGoodBehavior)}
           </p>
         </div>
@@ -56,14 +56,14 @@ export function PlansTab() {
       </div>
 
       {/* Ethical commitment banner */}
-      <div className="rounded-lg bg-gradient-to-br from-pri-50 to-acc-50 border border-pri-100 p-3.5 mt-2">
+      <div className="rounded-xl bg-white/[0.04] border border-white/[0.07] p-4 mt-2">
         <div className="flex items-center gap-2 mb-1.5">
-          <ShieldCheck size={16} className="text-pri-600 flex-shrink-0" />
-          <span className="font-display font-semibold text-[13px] text-n-700">
+          <ShieldCheck size={15} className="text-pri-400 flex-shrink-0" />
+          <span className="font-display font-semibold text-[13px] text-white/70">
             Our commitment
           </span>
         </div>
-        <p className="font-body text-[12px] text-n-500 leading-relaxed">
+        <p className="font-body text-[12px] text-white/35 leading-relaxed">
           All fees shown upfront. We&apos;ll never encourage borrowing more than you can repay.
         </p>
       </div>

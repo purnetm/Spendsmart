@@ -26,18 +26,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const isAdvisor = pathname.includes("/advisor");
 
   return (
-    <div className="flex flex-col min-h-screen bg-n-50">
+    <div className="flex flex-col min-h-screen bg-n-950">
       {/* Header */}
-      <header className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-gradient-to-br from-n-900 via-pri-900 to-pri-800 px-5 pt-12 pb-5">
-        {/* Decorative orb */}
-        <div
-          className="absolute top-0 right-0 w-40 h-40 rounded-full opacity-20 pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, #10b981 0%, transparent 70%)",
-          }}
-        />
-
-        <div className="relative flex items-center justify-between">
+      <header className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-n-950 border-b border-white/[0.07] px-5 pt-12 pb-5">
+        <div className="flex items-center justify-between">
           {/* Left: avatar + greeting */}
           <div className="flex items-center gap-3">
             <button
@@ -77,7 +69,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Bottom tab bar */}
-      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-white/95 backdrop-blur-md border-t border-n-100">
+      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-n-950/95 backdrop-blur-md border-t border-white/[0.07]">
         <div className="flex items-center justify-around px-2 py-2">
           {tabs.map(({ label, href, icon: Icon }) => {
             const isActive = pathname === href;
@@ -86,17 +78,17 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 key={href}
                 onClick={() => router.push(href)}
                 className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl active:scale-95 transition-all duration-200 ${
-                  isActive ? "bg-pri-50" : "hover:bg-n-50"
+                  isActive ? "bg-white/[0.08]" : "hover:bg-white/[0.04]"
                 }`}
               >
                 <Icon
                   size={22}
                   strokeWidth={isActive ? 2.5 : 2}
-                  className={isActive ? "text-pri-600" : "text-n-400"}
+                  className={isActive ? "text-pri-400" : "text-white/30"}
                 />
                 <span
                   className={`font-body text-[10px] font-medium ${
-                    isActive ? "text-pri-600" : "text-n-400"
+                    isActive ? "text-pri-400" : "text-white/30"
                   }`}
                 >
                   {label}

@@ -9,22 +9,22 @@ export default function BNPLPage() {
   return (
     <div className="px-4 py-4 pb-6">
       <Tabs defaultValue="plans">
-        <TabsList className="w-full bg-n-100 rounded-md p-1 mb-3.5">
+        <TabsList className="w-full bg-white/[0.06] rounded-lg p-1 mb-3.5">
           <TabsTrigger
             value="plans"
-            className="flex-1 py-1 text-[12px] font-body text-n-400 rounded-sm data-[active]:bg-white data-[active]:text-n-800 data-[active]:font-semibold data-[active]:shadow-sm"
+            className="flex-1 py-1.5 text-[12px] font-body text-white/35 rounded-md data-[active]:bg-white/[0.10] data-[active]:text-white data-[active]:font-semibold"
           >
             My Plans
           </TabsTrigger>
           <TabsTrigger
             value="calc"
-            className="flex-1 py-1 text-[12px] font-body text-n-400 rounded-sm data-[active]:bg-white data-[active]:text-n-800 data-[active]:font-semibold data-[active]:shadow-sm"
+            className="flex-1 py-1.5 text-[12px] font-body text-white/35 rounded-md data-[active]:bg-white/[0.10] data-[active]:text-white data-[active]:font-semibold"
           >
             Calculator
           </TabsTrigger>
           <TabsTrigger
             value="sim"
-            className="flex-1 py-1 text-[12px] font-body text-n-400 rounded-sm data-[active]:bg-white data-[active]:text-n-800 data-[active]:font-semibold data-[active]:shadow-sm"
+            className="flex-1 py-1.5 text-[12px] font-body text-white/35 rounded-md data-[active]:bg-white/[0.10] data-[active]:text-white data-[active]:font-semibold"
           >
             Score Sim
           </TabsTrigger>

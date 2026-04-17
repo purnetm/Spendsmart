@@ -26,28 +26,28 @@ export function SubscriptionsTab() {
     <div>
       {/* Summary row */}
       <div className="grid grid-cols-2 gap-2 mb-3">
-        <div className="rounded-lg border border-n-100 bg-white p-3">
-          <p className="font-body text-[11px] text-n-400 mb-0.5">Monthly total</p>
-          <p className="font-display font-extrabold text-xl text-n-900">
+        <div className="rounded-xl border border-white/[0.07] bg-[#161616] p-4">
+          <p className="font-body text-[11px] text-white/35 mb-1.5 uppercase tracking-wider">Monthly total</p>
+          <p className="font-display font-extrabold text-[22px] text-white leading-none">
             ₹{subTotal}
           </p>
         </div>
         <div
-          className={`rounded-lg border p-3 ${
+          className={`rounded-xl border p-4 ${
             wasteCost > 0
-              ? "bg-ora-50 border-ora-100"
-              : "bg-pri-50 border-pri-100"
+              ? "bg-ora-500/10 border-ora-500/20"
+              : "bg-pri-500/10 border-pri-500/20"
           }`}
         >
-          <p className="font-body text-[11px] text-n-400 mb-0.5">Can save</p>
-          <p className="font-display font-extrabold text-xl text-n-900">
+          <p className="font-body text-[11px] text-white/35 mb-1.5 uppercase tracking-wider">Can save</p>
+          <p className="font-display font-extrabold text-[22px] text-white leading-none">
             ₹{wasteCost}/mo
           </p>
         </div>
       </div>
 
       {/* Filter pills */}
-      <div className="flex gap-1 mb-2.5">
+      <div className="flex gap-1.5 mb-3">
         {(
           [
             { key: "all" as FilterType, label: `All (${SUBS.length})` },
@@ -59,8 +59,8 @@ export function SubscriptionsTab() {
             onClick={() => setFilter(key)}
             className={`rounded-full border text-[11px] font-body px-3 py-1.5 transition-colors ${
               filter === key
-                ? "border-pri-400 bg-pri-50 text-pri-700"
-                : "border-n-200 bg-white text-n-600"
+                ? "border-pri-500/40 bg-pri-500/10 text-pri-400"
+                : "border-white/[0.10] bg-transparent text-white/40"
             }`}
           >
             {label}
@@ -76,12 +76,12 @@ export function SubscriptionsTab() {
           return (
             <div
               key={sub.id}
-              className="flex items-center gap-2.5 p-3 bg-white rounded-md border border-n-100 mb-1.5 animate-fade-up"
+              className="flex items-center gap-3 p-3.5 bg-[#161616] rounded-xl border border-white/[0.07] mb-1.5 animate-fade-up"
             >
               {/* Icon */}
               <div
-                className="w-9 h-9 rounded-sm flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: `${sub.color}12` }}
+                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: `${sub.color}20` }}
               >
                 <Icon size={18} color={sub.color} />
               </div>
@@ -89,22 +89,22 @@ export function SubscriptionsTab() {
               {/* Name + usage */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 mb-0.5">
-                  <span className="font-display font-semibold text-[13px] text-n-800 truncate">
+                  <span className="font-display font-semibold text-[13px] text-white/85 truncate">
                     {sub.name}
                   </span>
                   {waste && (
-                    <span className="rounded-full bg-ora-50 border border-ora-100 text-ora-600 text-[9px] font-body px-1.5 py-0.5 flex-shrink-0">
+                    <span className="rounded-full bg-ora-500/10 border border-ora-500/20 text-ora-400 text-[9px] font-body px-1.5 py-0.5 flex-shrink-0">
                       Low use
                     </span>
                   )}
                 </div>
-                <p className="font-body text-[10px] text-n-400">
+                <p className="font-body text-[10px] text-white/35">
                   {getUsageText(sub)}
                 </p>
               </div>
 
               {/* Cost */}
-              <span className="font-display font-bold text-sm text-n-800 ml-auto flex-shrink-0">
+              <span className="font-display font-bold text-sm text-white/80 ml-auto flex-shrink-0">
                 ₹{sub.cost}
               </span>
             </div>
