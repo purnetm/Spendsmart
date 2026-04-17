@@ -5,7 +5,7 @@ import { MessageList } from "@/components/advisor/message-list";
 import { ChatInput } from "@/components/advisor/chat-input";
 
 export default function AdvisorPage() {
-  const { messages, typing, handleSend, handleAction } = useChat();
+  const { messages, typing, streaming, handleSend, handleAction } = useChat();
 
   const messagesWithHandlers = messages.map((m) => ({
     ...m,
@@ -15,7 +15,7 @@ export default function AdvisorPage() {
   return (
     <div className="flex flex-col h-[calc(100vh-130px)]">
       <MessageList messages={messagesWithHandlers} typing={typing} />
-      <ChatInput onSend={handleSend} />
+      <ChatInput onSend={handleSend} disabled={streaming || typing} />
     </div>
   );
 }
