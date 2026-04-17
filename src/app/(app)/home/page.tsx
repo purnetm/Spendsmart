@@ -4,6 +4,7 @@ import { USER } from "@/lib/data/user";
 import { wasteCost } from "@/lib/data/subscriptions";
 import { formatINR } from "@/lib/utils/format";
 import { HomeCatList } from "@/components/home/home-cat-list";
+import { BorderBeam } from "@/components/ui/border-beam";
 import {
   Calendar,
   TrendingUp,
@@ -37,7 +38,8 @@ export default function HomePage() {
       {/* A. Stats row */}
       <div className="grid grid-cols-2 gap-2 mb-3.5 animate-fade-up">
         {/* Spent this month */}
-        <div className="bg-[#161616] rounded-xl p-4 border border-white/[0.07]">
+        <div className="relative overflow-hidden bg-[#161616] rounded-xl p-4 border border-white/[0.07]">
+          <BorderBeam size={80} duration={8} colorFrom="#34D399" colorTo="#4F46E5" />
           <p className="font-body text-[11px] text-white/40 mb-1.5 uppercase tracking-wider">Spent</p>
           <p className="font-display font-extrabold text-[28px] text-white leading-none">
             ₹{(totalSpent / 1000).toFixed(1)}K
@@ -50,7 +52,8 @@ export default function HomePage() {
         </div>
 
         {/* Active EMIs */}
-        <div className="bg-[#161616] rounded-xl p-4 border border-white/[0.07]">
+        <div className="relative overflow-hidden bg-[#161616] rounded-xl p-4 border border-white/[0.07]">
+          <BorderBeam size={80} duration={8} colorFrom="#4F46E5" colorTo="#34D399" delay={4} />
           <p className="font-body text-[11px] text-white/40 mb-1.5 uppercase tracking-wider">EMIs</p>
           <p className="font-display font-extrabold text-[28px] text-white leading-none">
             ₹{(totalEMI / 1000).toFixed(0)}K
@@ -184,8 +187,9 @@ export default function HomePage() {
       {/* G. AI CTA */}
       <Link
         href="/advisor"
-        className="bg-gradient-to-br from-pri-600 to-pri-800 rounded-xl flex items-center gap-3 p-4 text-white w-full animate-fade-up d4"
+        className="relative overflow-hidden bg-gradient-to-br from-pri-600 to-pri-800 rounded-xl flex items-center gap-3 p-4 text-white w-full animate-fade-up d4"
       >
+        <BorderBeam size={100} duration={6} colorFrom="#34D399" colorTo="#818CF8" />
         <Sparkles size={18} className="flex-shrink-0 opacity-80" />
         <div className="flex-1">
           <p className="font-display font-semibold text-[14px]">Get AI advice</p>

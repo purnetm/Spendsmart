@@ -5,8 +5,8 @@ import { MONTHLY_TREND } from "@/lib/data/trends";
 
 export function TrendsTab() {
   return (
-    <div className="rounded-lg border border-n-100 bg-white p-3.5">
-      <p className="font-display font-semibold text-[13px] text-n-700 mb-3">
+    <div className="rounded-xl border border-white/[0.07] bg-[#161616] p-3.5">
+      <p className="font-display font-semibold text-[13px] text-white/70 mb-3">
         Spending vs Budget (6 months)
       </p>
       <TrendLine data={MONTHLY_TREND} />

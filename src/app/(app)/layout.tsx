@@ -4,6 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { Home as HomeIcon, BarChart3, CreditCard, Sparkles } from "lucide-react";
 import { Star } from "lucide-react";
 import { USER } from "@/lib/data/user";
+import { DotPattern } from "@/components/ui/dot-pattern";
 
 function getGreeting() {
   const h = new Date().getHours();
@@ -26,7 +27,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const isAdvisor = pathname.includes("/advisor");
 
   return (
-    <div className="flex flex-col min-h-screen bg-n-950">
+    <div className="relative flex flex-col min-h-screen bg-n-950 overflow-hidden">
+      <DotPattern className="absolute inset-0 opacity-[0.25] text-white [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_30%,black_100%)]" />
       {/* Header */}
       <header className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-40 bg-n-950 border-b border-white/[0.07] px-5 pt-12 pb-5">
         <div className="flex items-center justify-between">
@@ -61,7 +63,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
       {/* Content area */}
       <main
-        className={`flex-1 mt-[104px] pb-20 ${
+        className={`relative z-10 flex-1 mt-[104px] pb-20 ${
           isAdvisor ? "overflow-hidden" : "overflow-y-auto"
         }`}
       >

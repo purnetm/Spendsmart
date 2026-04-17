@@ -1,6 +1,7 @@
 "use client";
 
 import { Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { Message } from "@/types";
 
@@ -40,7 +41,11 @@ export function ChatBubble({ msg, isLast }: ChatBubbleProps) {
   const isAI = msg.role === "ai";
 
   return (
-    <div
+    <motion.div
+      key={msg.id}
+      initial={{ opacity: 0, y: 8, filter: "blur(2px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
       className={cn(
         "flex flex-col mb-3",
         isAI ? "items-start" : "items-end"
@@ -84,6 +89,6 @@ export function ChatBubble({ msg, isLast }: ChatBubbleProps) {
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

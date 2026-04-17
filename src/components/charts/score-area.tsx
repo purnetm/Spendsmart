@@ -41,11 +41,11 @@ function CustomTooltip({
   if (!active || !payload?.length) return null;
   const point = payload[0].payload;
   return (
-    <div className="bg-n-800 rounded-md px-3 py-2 text-[11px] text-white shadow-lg max-w-[160px]">
-      <p className="font-display font-semibold text-n-300 mb-0.5">{point.month}</p>
+    <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,0.10)", borderRadius: "8px", padding: "8px 12px" }} className="text-[11px] text-white shadow-lg max-w-[160px]">
+      <p className="font-display font-semibold mb-0.5" style={{ color: "rgba(255,255,255,0.40)" }}>{point.month}</p>
       <p className="font-semibold text-[13px] mb-0.5">{point.score}</p>
       {point.event && (
-        <p className="text-n-400 leading-tight">{point.event}</p>
+        <p style={{ color: "rgba(255,255,255,0.40)" }} className="leading-tight">{point.event}</p>
       )}
     </div>
   );
@@ -86,23 +86,23 @@ export function ScoreArea({ data, baseScore, scoreChange }: ScoreAreaProps) {
             <stop offset="95%" stopColor={gradientColor} stopOpacity={0.02} />
           </linearGradient>
         </defs>
-        <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" vertical={false} />
+        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" vertical={false} />
         <XAxis
           dataKey="month"
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: 10, fill: "#94A3B8" }}
+          tick={{ fontSize: 10, fill: "rgba(255,255,255,0.35)" }}
         />
         <YAxis
           axisLine={false}
           tickLine={false}
-          tick={{ fontSize: 10, fill: "#94A3B8" }}
+          tick={{ fontSize: 10, fill: "rgba(255,255,255,0.35)" }}
           domain={["dataMin - 15", "dataMax + 10"]}
         />
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip content={<CustomTooltip />} cursor={{ stroke: "rgba(255,255,255,0.08)" }} />
         <ReferenceLine
           y={baseScore}
-          stroke="#CBD5E1"
+          stroke="rgba(255,255,255,0.15)"
           strokeDasharray="4 4"
           strokeWidth={1.5}
         />
@@ -113,7 +113,7 @@ export function ScoreArea({ data, baseScore, scoreChange }: ScoreAreaProps) {
           strokeWidth={2}
           fill={`url(#${gradientId})`}
           dot={<CustomDot />}
-          activeDot={{ r: 5, stroke: "white", strokeWidth: 2 }}
+          activeDot={{ r: 5, stroke: "#09090b", strokeWidth: 2 }}
         />
       </AreaChart>
     </ResponsiveContainer>

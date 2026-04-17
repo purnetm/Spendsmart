@@ -2,30 +2,30 @@
 
 import { useRouter } from "next/navigation";
 import { CheckCircle2 } from "lucide-react";
+import { DotPattern } from "@/components/ui/dot-pattern";
+import { TextEffect } from "@/components/ui/text-effect";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
 
 export default function WelcomePage() {
   const router = useRouter();
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-n-900 via-pri-900 to-pri-800 flex flex-col overflow-hidden">
-      {/* Decorative orbs */}
+    <div className="relative min-h-screen bg-[#09090b] flex flex-col overflow-hidden">
+      {/* Subtle dot pattern background */}
+      <DotPattern className="absolute inset-0 opacity-[0.30] text-white [mask-image:radial-gradient(ellipse_70%_70%_at_50%_30%,transparent_20%,black_100%)]" />
+
+      {/* Soft glow accents */}
       <div
-        className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-20"
-        style={{
-          background:
-            "radial-gradient(circle, #10b981 0%, transparent 70%)",
-        }}
+        className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-10 pointer-events-none"
+        style={{ background: "radial-gradient(circle, #10b981 0%, transparent 70%)" }}
       />
       <div
-        className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full opacity-15"
-        style={{
-          background:
-            "radial-gradient(circle, #6366f1 0%, transparent 70%)",
-        }}
+        className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full opacity-08 pointer-events-none"
+        style={{ background: "radial-gradient(circle, #4f46e5 0%, transparent 70%)" }}
       />
 
       {/* Content */}
-      <div className="relative flex flex-col flex-1 px-6 pt-16 pb-10">
+      <div className="relative z-10 flex flex-col flex-1 px-6 pt-16 pb-10">
         {/* Logo */}
         <div className="mb-10 animate-fade-up d1">
           <div className="w-14 h-14 rounded-xl bg-pri-500/20 border border-pri-400/30 flex items-center justify-center">
@@ -54,10 +54,10 @@ export default function WelcomePage() {
 
         {/* Heading */}
         <div className="flex-1 animate-fade-up d2">
-          <h1 className="font-display text-5xl font-bold text-n-0 leading-tight mb-4">
-            Money that<br />makes sense
+          <h1 className="font-display text-5xl font-bold text-white leading-tight mb-4">
+            <TextEffect per="word" delay={0.1}>Money that makes sense</TextEffect>
           </h1>
-          <p className="font-body text-base text-n-0/60 leading-relaxed max-w-xs">
+          <p className="font-body text-base text-white/50 leading-relaxed max-w-xs">
             Track spending, manage BNPL plans, get AI insights — all in one app
             built for India.
           </p>
@@ -71,7 +71,7 @@ export default function WelcomePage() {
             ].map((badge) => (
               <span
                 key={badge}
-                className="inline-flex items-center gap-1.5 bg-n-0/10 border border-n-0/20 text-n-0/80 text-xs font-body font-medium px-3 py-1.5 rounded-full"
+                className="inline-flex items-center gap-1.5 bg-white/[0.06] border border-white/[0.10] text-white/60 text-xs font-body font-medium px-3 py-1.5 rounded-full"
               >
                 <CheckCircle2 size={12} className="text-pri-400" />
                 {badge}
@@ -82,15 +82,18 @@ export default function WelcomePage() {
 
         {/* CTA buttons */}
         <div className="flex flex-col gap-3 mt-10 animate-fade-up d4">
-          <button
+          <ShimmerButton
             onClick={() => router.push("/sign-up")}
-            className="w-full py-4 rounded-xl font-body font-semibold text-base text-n-0 bg-gradient-to-r from-pri-500 to-pri-600 shadow-lg shadow-pri-900/40 active:scale-95 transition-transform"
+            className="w-full py-4 font-body font-semibold text-base"
+            background="rgba(16, 185, 129, 0.12)"
+            shimmerColor="#34D399"
+            borderRadius="12px"
           >
             Create Account
-          </button>
+          </ShimmerButton>
           <button
             onClick={() => router.push("/sign-in")}
-            className="w-full py-4 rounded-xl font-body font-semibold text-base text-n-0 border border-n-0/30 bg-transparent active:scale-95 transition-transform"
+            className="w-full py-4 rounded-xl font-body font-semibold text-base text-white/80 border border-white/[0.12] bg-transparent active:scale-95 transition-transform hover:bg-white/[0.04]"
           >
             Sign In
           </button>
