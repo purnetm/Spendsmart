@@ -18,11 +18,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const initials = USER.name
-  .split(" ")
-  .map((n) => n[0])
-  .join("")
-  .toUpperCase();
+const AVATAR_URL = "/profile.jpg";
 
 interface MenuItem {
   icon: React.ComponentType<{ size?: number; className?: string }>;
@@ -79,8 +75,8 @@ export default function ProfilePage() {
         {/* Avatar + camera */}
         <div className="flex flex-col items-center">
           <div className="relative mb-3">
-            <div className="w-[68px] h-[68px] rounded-full bg-gradient-to-br from-pri-400 to-pri-600 flex items-center justify-center font-display font-bold text-2xl text-white shadow-lg">
-              {initials}
+            <div className="w-[68px] h-[68px] rounded-full overflow-hidden bg-white shadow-lg">
+              <img src={AVATAR_URL} alt={USER.name} className="w-full h-full object-cover" />
             </div>
             <button className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-n-50 transition-colors">
               <Camera size={12} className="text-n-600" />
@@ -88,7 +84,7 @@ export default function ProfilePage() {
           </div>
 
           <p className="font-display font-bold text-white text-[18px]">{USER.name}</p>
-          <p className="font-body text-[12px] text-white/60 mb-2">priya@example.com</p>
+          <p className="font-body text-[12px] text-white/60 mb-2">purnet@example.com</p>
 
           <div className="flex items-center gap-1.5 bg-warn-400/20 border border-warn-400/30 rounded-full px-3 py-1">
             <Star size={12} className="text-warn-400 fill-warn-400" />

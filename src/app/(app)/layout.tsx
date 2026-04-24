@@ -36,9 +36,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-3">
             <button
               onClick={() => router.push("/profile")}
-              className="w-10 h-10 rounded-full bg-gradient-to-br from-pri-400 to-pri-600 flex items-center justify-center font-display font-bold text-n-0 text-base shadow-md active:scale-95 transition-transform"
+              className="w-10 h-10 rounded-full overflow-hidden shadow-md active:scale-95 transition-transform"
             >
-              {USER.name.charAt(0)}
+              <img src="/profile.jpg" alt={USER.name} className="w-full h-full object-cover" />
             </button>
             <div>
               <p className="font-body text-xs text-n-0/50">{getGreeting()}</p>

@@ -1,7 +1,7 @@
 import type { User } from "@/types";
 
 export const USER: User = {
-  name: "Priya",
+  name: "Purnet",
   creditScore: 742,
   scoreChange: 8,
   creditLimit: 200000,

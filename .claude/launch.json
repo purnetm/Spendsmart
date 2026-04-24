@@ -3,14 +3,14 @@
   "configurations": [
     {
       "name": "Next.js Dev Server",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--", "-p", "3001"],
-      "port": 3001
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/Users/apple/Documents/Claude/Spendsmart/node_modules/next/dist/bin/next", "dev", "-p", "3000"],
+      "port": 3000
     },
     {
       "name": "Next.js Production Server",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "start", "--", "-p", "3001"],
+      "runtimeArgs": ["run", "start", "--", "-p", "3000"],
       "port": 3001
     }
   ]
