@@ -92,7 +92,7 @@ export default function WelcomePage() {
             Create Account
           </ShimmerButton>
           <button
-            onClick={() => router.push("/sign-in")}
+            onClick={() => router.push("/home")}
             className="w-full py-4 rounded-xl font-body font-semibold text-base text-white/80 border border-white/[0.12] bg-transparent active:scale-95 transition-transform hover:bg-white/[0.04]"
           >
             Sign In
